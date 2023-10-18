@@ -3,6 +3,8 @@ import prismadb from "@/lib/prismadb";
 import { hash } from "bcrypt";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    return res.status(200).json({ message: `${req.method}` });
+
     if (req.method !== "POST") {
         res.status(505).json({ error: "WTF" });
     }
