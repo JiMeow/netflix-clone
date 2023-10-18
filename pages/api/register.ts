@@ -4,7 +4,7 @@ import { hash } from "bcrypt";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method !== "POST") {
-        res.status(505).json({ error: "WTF" });
+       return res.status(405).end(); 
     }
 
     try {
